@@ -21,13 +21,20 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    restart: always
+    restart: unless-stopped
     ports:
       - 8080:80
     environment:
-      - PMA_ARBITRARY=1
+      - MYSQL_ROOT_PASSWORD=directus
+      - PMA_HOST=database
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=directus
+      - PMA_USER=root
+      - PMA_PASSWORD=directus
     networks:
       - directus
+    depends_on:
+      - database
 
   directus:
     container_name: directus
@@ -39,6 +46,7 @@ services:
       - ./extensions:/directus/extensions
     networks:
       - directus
+    restart: unless-stopped
     depends_on:
       - cache
       - database

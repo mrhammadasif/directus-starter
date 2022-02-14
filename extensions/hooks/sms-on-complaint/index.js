@@ -1,1 +1,1 @@
-"use strict";var e=({filter:e,action:t})=>{e("items.create",((e,t)=>{console.log("Creating Item!"),console.log(Object.entries(t))})),t("items.create",(()=>{console.log("Item created!")}))};module.exports=e;
+"use strict";var e=({filter:e,action:t})=>{e("items.create",((e,t)=>{console.log("Creating Item!"),console.log(Object.entries(t))})),t("items.create",(()=>{console.log("Item created!")})),t("items.update",(()=>{console.log("Item updated!")}))};module.exports=e;

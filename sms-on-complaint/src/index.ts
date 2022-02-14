@@ -9,4 +9,7 @@ export default defineHook(({ filter, action }) => {
 	action('items.create', () => {
 		console.log('Item created!');
 	});
+	action('items.update', () => {
+		console.log('Item updated!');
+	});
 });
